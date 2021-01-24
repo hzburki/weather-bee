@@ -10,7 +10,7 @@ import RootStack from './src/navigation/root.navigator';
 const App = () => {
   return (
     <ThemeProvider theme={myTheme}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar />
       <NavigationContainer>
         <RootStack />
       </NavigationContainer>
