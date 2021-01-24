@@ -9,16 +9,9 @@ export const Container = styled.View`
   height: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: ${() => scale(10)};
   padding-left: ${() => scale(20)};
   padding-right: ${() => scale(20)};
   background-color: ${({ theme }) => theme.bg.primary};
-`;
-
-export const Wrapper = styled.View`
-  flex: 1;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 `;
