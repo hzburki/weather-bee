@@ -5,13 +5,13 @@ import styled from 'styled-components/native';
 const { width } = Dimensions.get('window');
 
 export const Container = styled.View`
-  width: ${() => width};
+  width: ${() => width}px;
   height: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${() => scale(10)};
-  padding-left: ${() => scale(20)};
-  padding-right: ${() => scale(20)};
+  padding-top: ${() => scale(10)}px;
+  padding-left: ${() => scale(20)}px;
+  padding-right: ${() => scale(20)}px;
   background-color: ${({ theme }) => theme.bg.primary};
 `;

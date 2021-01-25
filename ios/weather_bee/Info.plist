@@ -28,6 +28,8 @@
     <string>FontAwesome5_Brands.ttf</string>
     <string>FontAwesome5_Regular.ttf</string>
     <string>FontAwesome5_Solid.ttf</string>
+    <string>MaterialIcons.ttf</string>
+    <string>MaterialCommunityIcons.ttf</string>
   </array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

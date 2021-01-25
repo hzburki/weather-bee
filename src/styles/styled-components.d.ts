@@ -8,6 +8,9 @@ declare module 'styled-components' {
         secondary: string;
       };
     };
+    button: {
+      primary: string;
+    };
     bg: {
       primary: string;
       secondary: string;

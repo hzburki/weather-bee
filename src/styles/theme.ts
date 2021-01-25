@@ -11,6 +11,9 @@ const myTheme: DefaultTheme = {
     tertiary: '#A09FB1',
     placeholder: '#616475',
   },
+  button: {
+    primary: '#6E707A',
+  },
   fonts: {
     family: {
       primary: 'Raleway',
