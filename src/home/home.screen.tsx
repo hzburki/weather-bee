@@ -1,32 +1,36 @@
 import React from 'react';
-import styled from 'styled-components/native';
 
-const Container = styled.View`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.bg.primary};
-`;
+import { Block } from '../styles/ui';
+import { HOME_BACKGROUND, SHOWER } from '../assets';
 
-enum Weight {
-  BOLD = 'bold',
-  NORMAL = 'normal',
-}
-
-interface TextInterface {
-  weight: Weight;
-}
-
-const Text = styled.Text<TextInterface>`
-  color: ${({ theme }) => theme.text.placeholder};
-  font-weight: ${({ weight }) => weight};
-`;
+import {
+  Text,
+  Container,
+  WeatherImage,
+  HomeBackgroundImage,
+  ImageBackgroundStyle,
+} from './home.styles';
 
 const HomeScreen = () => {
   return (
     <Container>
-      <Text weight={Weight.BOLD}>Home Screen</Text>
+      <Block flex={1}>
+        <HomeBackgroundImage
+          imageStyle={ImageBackgroundStyle}
+          source={HOME_BACKGROUND}>
+          <WeatherImage resizeMode="contain" source={SHOWER} />
+        </HomeBackgroundImage>
+      </Block>
+
+      <Block flex={1} align="center">
+        <Text>Bye World</Text>
+        <Text>Bye World</Text>
+        <Block dir="row" align="center">
+          <Text>Bye World</Text>
+          <Text>Bye World</Text>
+        </Block>
+        <Text>Bye World</Text>
+      </Block>
     </Container>
   );
 };
