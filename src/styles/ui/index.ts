@@ -1,2 +1,2 @@
-export * from './block/block';
-export * from './text/text';
+export * from './block';
+export * from './text';

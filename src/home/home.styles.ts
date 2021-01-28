@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
+import { verticalScale as vs, scale as ws } from 'react-native-size-matters';
+
 export const Container = styled.View`
   display: flex;
   flex: 1;
@@ -16,17 +18,25 @@ export const HomeBackgroundImage = styled.ImageBackground`
   justify-content: center;
 `;
 
-export const ImageBackgroundStyle = StyleSheet.create({
-  style: {
-    opacity: 0.2,
-  },
-}).style;
-
 export const WeatherImage = styled.Image`
   width: 50%;
   height: 50%;
 `;
 
-export const Text = styled.Text`
-  color: white;
-`;
+export const styles = StyleSheet.create({
+  imageBackground: {
+    opacity: 0.2,
+  },
+  weatherType: {
+    marginBottom: vs(20),
+  },
+  timeAndDateWrapper: {
+    marginBottom: vs(10),
+  },
+  time: {
+    marginRight: ws(30),
+  },
+  date: {
+    marginLeft: ws(30),
+  },
+});

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/native';
 
-import { JustifyContentType, AlignItemsType } from './block.types';
+import { JustifyContentType, AlignItemsType } from './types/block.types';
 
 interface IAlign {
   justifyContent: JustifyContentType;
