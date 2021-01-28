@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Block } from '../styles/ui';
+import { Block, Text } from '../styles/ui';
 import { HOME_BACKGROUND, SHOWER } from '../assets';
 
 import {
-  Text,
+  // Text,
   Container,
   WeatherImage,
   HomeBackgroundImage,
@@ -25,10 +25,17 @@ const HomeScreen = () => {
       <Block flex={1} align="center">
         <Text>Bye World</Text>
         <Text>Bye World</Text>
-        <Block dir="row" align="center">
+
+        <Block
+          dir="row"
+          align={{
+            justifyContent: 'space-around',
+            alignItems: 'center',
+          }}>
           <Text>Bye World</Text>
           <Text>Bye World</Text>
         </Block>
+
         <Text>Bye World</Text>
       </Block>
     </Container>

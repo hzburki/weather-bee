@@ -16,7 +16,7 @@ const myTheme: DefaultTheme = {
   },
   fonts: {
     family: {
-      primary: 'Raleway',
+      primary: 'Raleway-Regular',
       secondary: 'Montserrat',
     },
   },

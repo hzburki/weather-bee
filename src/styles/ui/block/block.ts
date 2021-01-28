@@ -1,10 +1,17 @@
 import styled, { css } from 'styled-components/native';
 
+import { JustifyContentType, AlignItemsType } from './block.types';
+
+interface IAlign {
+  justifyContent: JustifyContentType;
+  alignItems: AlignItemsType;
+}
+
 interface BlockProps {
   flex?: number;
   width?: number;
-  align?: 'none' | 'center';
   dir?: 'row' | 'column';
+  align?: 'none' | 'center' | IAlign;
 }
 
 export const Block = styled.View<BlockProps>`
@@ -22,15 +29,21 @@ export const Block = styled.View<BlockProps>`
       flex: ${() => flex};
     `}
 
-${({ align }) => {
+  ${({ align }) => {
     switch (align) {
       case 'none': {
         return css``;
       }
       case 'center': {
-        css`
+        return css`
           align-items: center;
           justify-content: center;
+        `;
+      }
+      default: {
+        return css`
+          justify-content: ${() => align?.justifyContent};
+          align-items: ${() => align?.alignItems};
         `;
       }
     }
