@@ -10,7 +10,6 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${() => scale(10)}px;
   padding-left: ${() => scale(20)}px;
   padding-right: ${() => scale(20)}px;
   background-color: ${({ theme }) => theme.bg.primary};

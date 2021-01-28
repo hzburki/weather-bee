@@ -1,4 +1,5 @@
 import React from 'react';
+import { verticalScale as vs } from 'react-native-size-matters';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../header/header';
@@ -14,7 +15,7 @@ export default () => {
         component={DrawerStack}
         options={{
           headerTitle: () => <Header />,
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: { shadowColor: 'transparent', height: vs(80) },
         }}
       />
     </RootStack.Navigator>

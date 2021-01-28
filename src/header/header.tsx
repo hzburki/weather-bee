@@ -13,7 +13,6 @@ const Header: React.FC = () => {
   return (
     <Container>
       <FontAwesome name="bars" color={theme.text.primary} size={scale(22)} />
-
       <LocationButton />
     </Container>
   );
