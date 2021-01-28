@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { useTheme } from 'styled-components/native';
-import MatericalIcon from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { scale as ws } from 'react-native-size-matters';
 
 const Container = styled.View`
@@ -19,7 +19,7 @@ const LocationButton = () => {
 
   return (
     <Container>
-      <MatericalIcon
+      <MaterialIcons
         name="my-location"
         color={theme.text.primary}
         size={ws(22)}
