@@ -5,14 +5,15 @@ import { ThemeProvider } from 'styled-components/native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { myTheme } from './src/styles/theme';
-import RootStack from './src/navigation/root.navigator';
+import DrawerStack from './src/navigation/drawer.navigator';
 
 const App = () => {
   return (
     <ThemeProvider theme={myTheme}>
       <StatusBar />
       <NavigationContainer>
-        <RootStack />
+        <DrawerStack />
+        {/* <RootStack /> */}
       </NavigationContainer>
     </ThemeProvider>
   );

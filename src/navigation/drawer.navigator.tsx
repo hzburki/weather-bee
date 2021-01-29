@@ -1,7 +1,7 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import TabStack from './tab.navigator';
+import StackNavigator from './stack.navigator';
 import CustomDrawer from '../drawer/drawer.screen';
 
 const Drawer = createDrawerNavigator();
@@ -11,7 +11,7 @@ export default () => {
     <Drawer.Navigator
       initialRouteName="TabStack"
       drawerContent={CustomDrawerContent}>
-      <Drawer.Screen name="TabStack" component={TabStack} />
+      <Drawer.Screen name="AppStack" component={StackNavigator} />
     </Drawer.Navigator>
   );
 };

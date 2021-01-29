@@ -39,7 +39,7 @@ const HomeScreen = () => {
           </Text>
         </Block>
 
-        <Text color="tertiary" style={styles.weatherType} size={50}>
+        <Text color="tertiary" margins={{ bottom: 20 }} size={50}>
           Shower
         </Text>
 

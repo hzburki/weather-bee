@@ -3,7 +3,9 @@ import { verticalScale as vs } from 'react-native-size-matters';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../header/header';
-import DrawerStack from './drawer.navigator';
+
+import TabNavigator from './tab.navigator';
+// import DrawerStack from './drawer.navigator';
 
 const RootStack = createStackNavigator();
 
@@ -12,7 +14,7 @@ export default () => {
     <RootStack.Navigator initialRouteName="Home">
       <RootStack.Screen
         name="Home"
-        component={DrawerStack}
+        component={TabNavigator}
         options={{
           headerTitle: () => <Header />,
           headerStyle: { shadowColor: 'transparent', height: vs(80) },
