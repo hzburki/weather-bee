@@ -13,6 +13,7 @@ const myTheme: DefaultTheme = {
   },
   button: {
     primary: '#6E707A',
+    secondary: '#3C47E9',
   },
   fonts: {
     family: {

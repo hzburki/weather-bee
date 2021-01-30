@@ -1,17 +1,12 @@
 import React from 'react';
 
-import { Block, Text } from '../styles/ui';
+import { Container, Block, Text } from '../styles/ui';
 import Location from './components/location';
 import { HOME_BACKGROUND, SHOWER } from '../assets';
 
-import {
-  styles,
-  Container,
-  WeatherImage,
-  HomeBackgroundImage,
-} from './home.styles';
+import { styles, WeatherImage, HomeBackgroundImage } from './home.styles';
 
-const HomeScreen = () => {
+const HomeScreen: React.FC = () => {
   return (
     <Container>
       <Block flex={1}>
@@ -39,7 +34,7 @@ const HomeScreen = () => {
           </Text>
         </Block>
 
-        <Text color="tertiary" margins={{ bottom: 20 }} size={50}>
+        <Text color="tertiary" margin={{ bottom: 20 }} size={50}>
           Shower
         </Text>
 

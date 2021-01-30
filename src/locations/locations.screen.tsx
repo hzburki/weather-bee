@@ -1,19 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+import { Container } from '../styles/ui';
+import AddCities from './components/add-cities';
 
-const LocationsScreen = () => {
+const LocationsScreen: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Locations Screen</Text>
-    </View>
+    <Container>
+      <AddCities />
+    </Container>
   );
 };
 

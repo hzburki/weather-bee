@@ -1,22 +1,15 @@
 import styled, { css } from 'styled-components/native';
-import { scale as ws, verticalScale as vs } from 'react-native-size-matters';
+import { scale as ws } from 'react-native-size-matters';
 
-interface IMarginPadding {
-  bottom?: number;
-  top?: number;
-  vertical?: number;
-  left?: number;
-  right?: number;
-  horizontal?: number;
-}
+import { IMarginPadding, applyMargins } from '../styles.utils';
 
 interface TextProps {
   size?: number;
   font?: string;
   weight?: number | string;
   color?: 'primary' | 'secondary' | 'tertiary' | 'placeholder';
-  // style?: object;
-  margins?: IMarginPadding;
+  margin?: IMarginPadding;
+  padding?: IMarginPadding;
 }
 
 export const Text = styled.Text<TextProps>`
@@ -25,57 +18,10 @@ export const Text = styled.Text<TextProps>`
   /* font-family: ${({ font, theme }) =>
     font ? font : theme.fonts.family.primary}; */
 
-  ${({
-      margins = {
-        bottom: 0,
-        top: 0,
-        vertical: 0,
-        horizontal: 0,
-        left: 0,
-        right: 0,
-      },
-    }) => {
-    const { bottom, vertical, top, left, horizontal, right } = margins;
-
-    if (bottom) {
-      return css`
-        margin-bottom: ${() => `${vs(bottom)}px`};
-      `;
-    }
-
-    if (top) {
-      return css`
-        margin-top: ${() => `${vs(top)}px`};
-      `;
-    }
-
-    if (left) {
-      return css`
-        margin-left: ${() => `${ws(left)}px`};
-      `;
-    }
-
-    if (right) {
-      return css`
-        margin-right: ${() => `${ws(right)}px`};
-      `;
-    }
-
-    if (vertical) {
-      return css`
-        margin-top: ${() => `${vs(vertical)}px`};
-        margin-bottom: ${() => `${vs(vertical)}px`};
-      `;
-    }
-
-    if (horizontal) {
-      return css`
-        margin-left: ${() => `${ws(horizontal)}px`};
-        margin-right: ${() => `${ws(horizontal)}px`};
-      `;
-    }
-
-    return css``;
+  ${({ margin, padding }) => {
+    padding && applyMargins(padding);
+    margin && applyMargins(margin);
+    return '';
   }}
 
   ${({ color, theme }) => {
@@ -104,7 +50,3 @@ export const Text = styled.Text<TextProps>`
     `;
   }}
 `;
-
-// Text.defaultProps = {
-//   margins: { bottom: 0, top: 0, vertical: 0 },
-// };

@@ -3,14 +3,6 @@ import styled from 'styled-components/native';
 
 import { verticalScale as vs, scale as ws } from 'react-native-size-matters';
 
-export const Container = styled.View`
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.bg.primary};
-`;
-
 export const HomeBackgroundImage = styled.ImageBackground`
   flex: 1;
   width: 100%;

@@ -16,7 +16,7 @@ export default () => {
         name="Home"
         component={TabNavigator}
         options={{
-          headerTitle: () => <Header />,
+          headerTitle: (props) => <Header {...props} />,
           headerStyle: { shadowColor: 'transparent', height: vs(80) },
         }}
       />

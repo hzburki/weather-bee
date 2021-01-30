@@ -1,17 +1,19 @@
 import styled, { css } from 'styled-components/native';
 
-import { JustifyContentType, AlignItemsType } from './types/block.types';
-
-interface IAlign {
-  justifyContent: JustifyContentType;
-  alignItems: AlignItemsType;
-}
+import {
+  IMarginPadding,
+  applyMargins,
+  applyPaddings,
+  IAlign,
+} from '../styles.utils';
 
 interface BlockProps {
   flex?: number;
   width?: number;
   dir?: 'row' | 'column';
   align?: 'none' | 'center' | IAlign;
+  padding?: IMarginPadding;
+  margin?: IMarginPadding;
 }
 
 export const Block = styled.View<BlockProps>`
@@ -28,6 +30,12 @@ export const Block = styled.View<BlockProps>`
     css`
       flex: ${() => flex};
     `}
+
+  ${({ margin, padding }) => {
+    margin && applyMargins(margin);
+    padding && applyPaddings(padding);
+    return '';
+  }}
 
   ${({ align }) => {
     switch (align) {
