@@ -35,16 +35,9 @@ export interface IMarginPadding {
   horizontal?: number;
 }
 
-export enum MarginPadding {
-  bottom = 0,
-  top = 0,
-  vertical = 0,
-  horizontal = 0,
-  left = 0,
-  right = 0,
-}
+type DummyTextProps = Pick<React.CSSProperties, 'margin' | 'padding'>;
 
-export const applyMargins = (margin: IMarginPadding) => {
+export const applyMargins = (margin: DummyTextProps) => {
   const { bottom, vertical, top, left, horizontal, right } = margin;
 
   if (bottom) {
@@ -123,6 +116,8 @@ export const applyPaddings = (padding: IMarginPadding) => {
   }
 
   if (horizontal) {
+    console.log('horizontal', horizontal);
+
     return css`
       padding-left: ${() => `${ws(horizontal)}px`};
       padding-right: ${() => `${ws(horizontal)}px`};

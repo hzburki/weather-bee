@@ -1,13 +1,19 @@
 import styled from 'styled-components/native';
 
-interface IContainer {
-  css?: object;
+import { applyMargins, applyPaddings, IMarginPadding } from '../styles.utils';
+
+interface ContainerProps {
+  margin?: IMarginPadding;
+  padding?: IMarginPadding;
 }
 
-export const Container = styled.View<IContainer>`
+export const Container = styled.SafeAreaView<ContainerProps>`
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.bg.primary};
+
+  ${({ margin }) => (margin ? applyMargins(margin) : '')}
+  ${({ padding }) => (padding ? applyPaddings(padding) : '')}
 `;

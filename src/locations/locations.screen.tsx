@@ -5,7 +5,7 @@ import AddCities from './components/add-cities';
 
 const LocationsScreen: React.FC = () => {
   return (
-    <Container>
+    <Container padding={{ left: 200 }}>
       <AddCities />
     </Container>
   );

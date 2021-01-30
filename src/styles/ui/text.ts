@@ -1,15 +1,17 @@
 import styled, { css } from 'styled-components/native';
 import { scale as ws } from 'react-native-size-matters';
 
-import { IMarginPadding, applyMargins } from '../styles.utils';
+import { IMarginPadding, applyMargins, applyPaddings } from '../styles.utils';
+
+type DummyTextProps = Pick<React.CSSProperties, 'margin' | 'padding'>;
 
 interface TextProps {
   size?: number;
   font?: string;
+  margin?: DummyTextProps;
+  padding?: DummyTextProps;
   weight?: number | string;
   color?: 'primary' | 'secondary' | 'tertiary' | 'placeholder';
-  margin?: IMarginPadding;
-  padding?: IMarginPadding;
 }
 
 export const Text = styled.Text<TextProps>`
@@ -18,11 +20,8 @@ export const Text = styled.Text<TextProps>`
   /* font-family: ${({ font, theme }) =>
     font ? font : theme.fonts.family.primary}; */
 
-  ${({ margin, padding }) => {
-    padding && applyMargins(padding);
-    margin && applyMargins(margin);
-    return '';
-  }}
+  ${({ margin }) => (margin ? applyMargins(margin) : '')}
+  ${({ padding }) => (padding ? applyPaddings(padding) : '')}
 
   ${({ color, theme }) => {
     let selected: string;
