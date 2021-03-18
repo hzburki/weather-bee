@@ -1,23 +1,33 @@
 import React from 'react';
 
-import { Container, Block, Text } from '../styles/ui';
-import Location from './components/location';
+import { Div } from '../styles/ui';
+// import Location from './components/location';
 import { HOME_BACKGROUND, SHOWER } from '../assets';
 
-import { styles, WeatherImage, HomeBackgroundImage } from './home.styles';
+import {
+  styles,
+  HomeScreen,
+  CurrentWeatherImage,
+  WeatherBackgroundImage,
+} from './home.styles';
 
-const HomeScreen: React.FC = () => {
+const Home: React.FC = () => {
   return (
-    <Container>
-      <Block flex={1}>
-        <HomeBackgroundImage
+    <HomeScreen>
+      {/* //TODO make this a single component */}
+      <Div flex={1}>
+        <WeatherBackgroundImage
           imageStyle={styles.imageBackground}
           source={HOME_BACKGROUND}>
-          <WeatherImage resizeMode="contain" source={SHOWER} />
-        </HomeBackgroundImage>
-      </Block>
+          <CurrentWeatherImage resizeMode="contain" source={SHOWER} />
+        </WeatherBackgroundImage>
+      </Div>
 
-      <Block
+      <Div flex={1}>
+        <Div />
+      </Div>
+
+      {/* <Block
         flex={1}
         align={{
           justifyContent: 'flex-start',
@@ -49,9 +59,9 @@ const HomeScreen: React.FC = () => {
         </Block>
 
         <Location />
-      </Block>
-    </Container>
+      </Block> */}
+    </HomeScreen>
   );
 };
 
-export default HomeScreen;
+export default Home;

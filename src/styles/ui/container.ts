@@ -8,8 +8,8 @@ interface ContainerProps {
 }
 
 export const Container = styled.SafeAreaView<ContainerProps>`
-  display: flex;
   flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.bg.primary};
