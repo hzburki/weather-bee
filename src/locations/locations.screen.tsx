@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container } from '../styles/ui';
+import { LocationScreen } from './locations.styles';
 import AddCities from './components/add-cities';
 
 const LocationsScreen: React.FC = () => {
   return (
-    <Container padding={{ left: 200 }}>
+    <LocationScreen>
       <AddCities />
-    </Container>
+    </LocationScreen>
   );
 };
 
