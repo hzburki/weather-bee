@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
-// import { verticalScale as vs, scale as ws } from 'react-native-size-matters';
-
 export const HomeScreen = styled.View`
   display: flex;
   flex: 1;
@@ -10,13 +8,6 @@ export const HomeScreen = styled.View`
   justify-content: center;
   background-color: ${({ theme }) => theme.bg.primary};
 `;
-
-// export const WeatherImageDiv = styled(Div)``;
-
-// export const WeatherInfoDiv = styled(Div)`
-//   justify-content: 'flex-start';
-//   align-items: 'center';
-// `;
 
 export const WeatherBackgroundImage = styled.ImageBackground`
   width: 100%;
