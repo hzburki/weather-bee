@@ -1,31 +1,24 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { useTheme } from 'styled-components';
 import { scale as ws } from 'react-native-size-matters';
 import MatericalIcon from 'react-native-vector-icons/MaterialIcons';
 
-import { Text, Block } from '../../styles/ui';
-
-const styles = StyleSheet.create({
-  text: {
-    marginLeft: ws(5),
-  },
-});
+import { Text, Div } from '../../styles/ui';
 
 const Location = () => {
   const theme = useTheme();
 
   return (
-    <Block align="center" dir="row">
+    <Div flex={1} justifyContent="center" alignItems="center" dir="row">
       <MatericalIcon
         size={ws(20)}
         name="location-on"
         color={theme.text.secondary}
       />
-      <Text color="secondary" style={styles.text} size={15}>
+      <Text color="secondary" mL={5} size={15}>
         Islamabad
       </Text>
-    </Block>
+    </Div>
   );
 };
 

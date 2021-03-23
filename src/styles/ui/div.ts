@@ -8,51 +8,29 @@ import {
   MarginPaddingInterface,
 } from '../styles.utils';
 
-interface DivProps {
+interface DivProps extends MarginPaddingInterface {
   flex?: number;
   dir?: FlexDirectionType;
   fullWidth?: true | false;
   alignItems?: AlignItemsType;
-  margin?: MarginPaddingInterface;
-  padding?: MarginPaddingInterface;
   justifyContent?: JustifyContentType;
 }
 
 export const Div = styled.View<DivProps>`
-  flex: ${(props) => props.flex || 'auto'};
+  flex: ${(props) => props.flex || '0 auto'};
   flex-direction: ${(props) => props.dir || 'column'};
   align-items: ${(props) => props.alignItems || 'center'};
   justify-content: ${(props) => props.justifyContent || 'center'};
 
-  ${({ margin }) => {
-    if (!margin) {
-      return css``;
-    }
+  margin-top: ${({ mT = 0 }) => vs(mT) + 'px'};
+  margin-left: ${({ mB = 0 }) => ws(mB) + 'px'};
+  margin-right: ${({ mR = 0 }) => ws(mR) + 'px'};
+  margin-bottom: ${({ mB = 0 }) => vs(mB) + 'px'};
 
-    const { top = 0, left = 0, right = 0, bottom = 0 } = margin;
-
-    return css`
-      margin-top: ${() => vs(top) + 'px'};
-      margin-left: ${() => ws(left) + 'px'};
-      margin-right: ${() => ws(right) + 'px'};
-      margin-bottom: ${() => vs(bottom) + 'px'};
-    `;
-  }};
-
-  ${({ padding }) => {
-    if (!padding) {
-      return css``;
-    }
-
-    const { top = 0, left = 0, right = 0, bottom = 0 } = padding;
-
-    return css`
-      padding-top: ${() => vs(top) + 'px'};
-      padding-left: ${() => ws(left) + 'px'};
-      padding-right: ${() => ws(right) + 'px'};
-      padding-bottom: ${() => vs(bottom) + 'px'};
-    `;
-  }};
+  padding-top: ${({ pT = 0 }) => vs(pT) + 'px'};
+  padding-left: ${({ pB = 0 }) => ws(pB) + 'px'};
+  padding-right: ${({ pR = 0 }) => ws(pR) + 'px'};
+  padding-bottom: ${({ pB = 0 }) => vs(pB) + 'px'};
 
   ${(props) =>
     props.fullWidth &&

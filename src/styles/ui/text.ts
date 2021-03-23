@@ -2,46 +2,24 @@ import styled, { css } from 'styled-components/native';
 import { scale as ws, verticalScale as vs } from 'react-native-size-matters';
 
 import { MarginPaddingInterface, ColorType, FontType } from '../styles.utils';
-interface TextProps {
+interface TextProps extends MarginPaddingInterface {
   size?: number;
   font?: FontType;
   color?: ColorType;
-  margin?: MarginPaddingInterface;
-  padding?: MarginPaddingInterface;
 }
 
 export const Text = styled.Text<TextProps>`
   font-size: ${({ size = 0 }) => ws(size)}px;
 
-  ${({ margin }) => {
-    if (!margin) {
-      return css``;
-    }
+  margin-top: ${({ mT = 0 }) => vs(mT) + 'px'};
+  margin-left: ${({ mB = 0 }) => ws(mB) + 'px'};
+  margin-right: ${({ mR = 0 }) => ws(mR) + 'px'};
+  margin-bottom: ${({ mB = 0 }) => vs(mB) + 'px'};
 
-    const { top = 0, left = 0, right = 0, bottom = 0 } = margin;
-
-    return css`
-      margin-top: ${() => vs(top) + 'px'};
-      margin-left: ${() => ws(left) + 'px'};
-      margin-right: ${() => ws(right) + 'px'};
-      margin-bottom: ${() => vs(bottom) + 'px'};
-    `;
-  }};
-
-  ${({ padding }) => {
-    if (!padding) {
-      return css``;
-    }
-
-    const { top = 0, left = 0, right = 0, bottom = 0 } = padding;
-
-    return css`
-      padding-top: ${() => vs(top) + 'px'};
-      padding-left: ${() => ws(left) + 'px'};
-      padding-right: ${() => ws(right) + 'px'};
-      padding-bottom: ${() => vs(bottom) + 'px'};
-    `;
-  }};
+  padding-top: ${({ pT = 0 }) => vs(pT) + 'px'};
+  padding-left: ${({ pB = 0 }) => ws(pB) + 'px'};
+  padding-right: ${({ pR = 0 }) => ws(pR) + 'px'};
+  padding-bottom: ${({ pB = 0 }) => vs(pB) + 'px'};
 
   /** Font Family */
   ${({ font, theme }) => {

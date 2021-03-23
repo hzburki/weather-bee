@@ -21,8 +21,12 @@ export type ColorType = 'primary' | 'secondary' | 'tertiary' | 'placeholder';
 
 export type FlexDirectionType = 'row' | 'column';
 export interface MarginPaddingInterface {
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
+  mT?: number;
+  mB?: number;
+  mL?: number;
+  mR?: number;
+  pT?: number;
+  pB?: number;
+  pL?: number;
+  pR?: number;
 }
